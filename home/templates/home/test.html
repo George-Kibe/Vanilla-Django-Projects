@@ -1,0 +1,80 @@
+{% extends 'home/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-3">
+            <form action="">
+                <fieldset>
+                    <legend>Favourites</legend>
+                    <div>
+                        <label for="">Color</label>
+                    </div>
+                    <div>
+                        <input type="text" list="color-list">
+                        <datalist id="color-list" >
+                            <option value="Red"></option>
+                            <option value="Green"></option>
+                            <option value="Blue"></option>
+                            <option value="Yellow"></option>
+                            <option value="Black"></option>
+                            <option value="Grey"></option>
+                            <option value="Orange"></option>
+                        </datalist>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="">Fruits</label>
+                    </div>
+                    <div>
+                        <input type="text" list="fruits-list">
+                        <datalist id="fruits-list" >
+                            <option value="Apple"></option>
+                            <option value="Pineapple"></option>
+                            <option value="Orange"></option>
+                            <option value="Mango"></option>
+                            <option value="Banana"></option>
+                            <option value="Grapes"></option>
+                            <option value="Watermelon"></option>
+                        </datalist>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <form action="">
+                <fieldset>
+                    <legend>Favourites</legend>
+                    <div>
+                        <label for="">Color</label>
+                    </div>
+                    <div>
+                        <input type="color" list="color-list">                    
+                    </div>
+                    <br>
+                    <div>
+                        <label for="">Progress Bar</label>
+                    </div>
+                    <div>
+                        <progress value="50" max="100">50%</progress>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <p>H<sub>2</sub>O for water</p>
+            <p>O<sub>2</sub> for Oxygen</p>
+            <p>x<sup>2</sup>*y<sup>2</sup></p>
+        </div>
+        <div class="col-md-3">
+            <picture>
+                <source srcset="{% static 'home/logo.png'%}" media="(min-width:900px)">
+                <img src="{% static 'home/logo1.png'%}" alt="" style="width:300px;">
+            </picture>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

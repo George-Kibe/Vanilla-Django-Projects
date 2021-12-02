@@ -1,0 +1,30 @@
+{% extends 'home/layout.html' %}
+
+{% block content %}
+<div class="container my-3">
+    <h2 class="text-center">List of Items Todo</h2>
+    <table class="table" id="table_id">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Task Title</th>
+            <th scope="col">Task description</th>
+            <th scope="col">Date and Time Added</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% comment %} Run a for loop to iterate through all the tasks{% endcomment %}
+            {% for task in tasks %}
+            <tr>
+            <th scope="row">{{forloop.counter}}</th> {% comment %} Can also use {{task.pk}} or {{task.id}}{% endcomment %}
+            <td>{{task.taskTitle}}</td>
+            <td>{{task.taskdesc}}</td> 
+            <td>{{task.time}}</td>
+            <td><a class="btn btn-primary" href="{% url 'home:updatetask' task.pk %}">Update</a></td>
+            <td><a class="btn btn-warning" href="{% url 'home:deletetask' task.id %}">Delete</a></td>      
+            </tr>
+            {% endfor %}  
+        </tbody>
+    </table>    
+</div>
+{% endblock %}
